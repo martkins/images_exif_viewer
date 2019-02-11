@@ -1,0 +1,59 @@
+<ExifLabel@LabelWithModel>:
+    text:'Exif Tags'
+    text_size: self.width, None
+    size_hint_y:0.1
+<MainImage@ImageWithModel>:
+    size_hint_max:dp(512),dp(512)
+    pos_hint: {'center_x': .5, 'center_y': .5}
+    source:'./images/kivy.png'
+    canvas.before:
+        PushMatrix
+        Rotate:
+            angle: self.model.ang
+            origin: self.center
+    canvas.after:
+        PopMatrix
+<ExifTags@LabelWithModel>:
+    text:self.model.text
+    text_size: self.width, None
+    canvas:
+        Color:
+            rgba: 0.2, 0.2, 0.5, 0.5
+        Rectangle:
+            size: self.size
+            pos: self.pos
+<StandardBox@BoxLayout>
+    orientation:'vertical'
+    spacing:10
+BoxLayout:
+    canvas:
+        Color:
+            rgba: 0.5, 0.5, 0.5, 0.5
+        Rectangle:
+            size: self.size
+            pos: self.pos
+    BoxLayout:
+        padding:30
+        spacing:30
+        BoxLayout:
+            RelativeLayout:
+                id:image_box
+        StandardBox:
+            StandardBox:
+                id:exif_container
+            StandardBox:
+                id:prova
+                orientation:'horizontal'
+                size_hint_y:0.4
+                StandardBox:
+                    id:button_box
+                StandardBox:
+                    id:cycle_box
+
+
+
+
+
+            
+
+
