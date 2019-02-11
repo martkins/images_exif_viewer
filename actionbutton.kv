@@ -1,0 +1,23 @@
+<RotateRight@ButtonWithModel>:
+    on_press:self.model.rotate_right()
+    text:'Rotate Right'
+<RotateLeft@ButtonWithModel>:
+    on_press:self.model.rotate_left()
+    text:'Rotate Left'
+<OpenImage@ButtonWithModel>:
+    on_press:self.model.open_image()
+    text:'Open Image'
+<GetExifData@ButtonWithModel>:
+    on_press:self.model.get_exif_data()
+    text:'Get Exif Data'
+<GetLocation@ButtonWithModel>:
+    on_press:self.model.get_location()
+    text:'Google Maps'
+<NextImage@ButtonWithModel>
+    on_press:self.model.next_image()
+    text:'Next Image'
+    size_hint_y:0.4
+<PreviousImage@ButtonWithModel>
+    on_press:self.model.previous_image()
+    text:'Previous Image'
+    size_hint_y:0.4
